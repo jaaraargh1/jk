@@ -1,0 +1,34 @@
+button{
+margin-top: 3vh;
+background-color: darkslategrey;
+color: white;
+width: 49.8vh;
+text-align: left;
+border: solid darkslategrey 1px;
+
+
+}
+
+li {
+
+max-width: 49.8vh;
+align-items: center;
+
+}
+button::before {
+
+  content: "▶︎ ";
+    
+ }
+  
+button[aria-expanded="true"]::before {
+    content: "▼︎ ";
+  }
+
+li div {
+
+  border: solid darkslategrey 1px;
+
+}
+
+  

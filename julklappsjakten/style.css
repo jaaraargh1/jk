@@ -1,0 +1,398 @@
+
+body {
+background: white;
+} 
+
+#frontPage{
+width: 70vw;
+/*hidden*/
+/*display: ;
+*/
+/* display: flex */
+height: 100vh;
+}
+.infoText{
+width: 5vw;
+}
+.line{
+background-color: black;
+height: 1px;    
+}
+.wrapperHeading{
+margin-top: 3vw;
+font-size: 24px;
+display: flex;
+flex-direction: row;
+justify-content: right;
+margin-right: 3vw;
+}
+#header{
+background: url(pexels-jimmy-chan-1723679.jpg);
+background-size : cover;
+background-repeat : no-repeat;
+margin-top: -3vw;
+margin-bottom: auto;
+height: 25vh;
+width: 70vw;
+position: sticky;
+}
+
+#navbar{
+display: flex;
+flex-direction: row;
+height: 16vh;
+width: 70vw;
+background-color: rgb(254,248,248);
+}
+
+#categories{
+width: 30vw;
+height: 10vh;
+flex-direction: row;
+display:flex;
+margin-left: 13vw;}
+
+.categoryType{
+font-size: 16px;
+color: black;
+margin-left: 2vw;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: 1vw;
+justify-content: center;
+}
+
+.pageTitle{
+    height: 4vw;
+    width: 70vw;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: left;
+justify-content: left;
+margin-left: 1vw;
+margin-top: 2vw;
+margin-right: auto;
+font-size: 30px;
+}
+
+#imageid {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25vw;
+    width: 25vw;
+    justify-content: center;
+    border: 10px solid white;
+    object-fit: cover;
+   
+}
+
+#shoppingCartIcon{
+position: sticky;
+margin-top: 0px;
+margin-right: 0;
+margin-left: auto;
+height: 10vh;
+width: 3.3vw;
+background: url(images/shoppingCartIcon.png);
+background-repeat : no-repeat;
+flex-direction: row;
+}
+
+#logo{
+flex-direction: row;
+margin-top: 0;
+margin-left: 0;
+margin-right: -15vh;
+position: sticky;
+background: url(images/logo.png);
+background-repeat : no-repeat;
+height: 17vh;
+width: 30vh;
+margin-right: 2vw;
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    margin-right: 2px; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    
+    border-left: 15px solid;
+    border-left-color: grey;
+  }
+  #imgwrapper {
+    background-color:white;
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    justify-content: center;
+    height: 25vw;
+    width: 25vw;
+    align-items: center;
+    
+    }
+
+  .arrow-left {
+    width: 0; 
+    height: 0; 
+    margin-left: 2px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    
+    border-right: 15px solid;
+    border-right-color: grey;
+  }
+
+
+  .image-gallery {
+    width: 28vw;
+    height: 12vw;
+    margin-top: auto;
+    margin-bottom: 12vw;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    float: left;
+    display: flex;
+    align-self: center;
+    flex-direction: row-reverse;
+        
+  }
+/*
+#Julkransar{
+display: none;
+}
+#julklader{
+display: none;    
+}
+#Juldekorationer{
+display: none;
+}
+#Julgranspynt{
+display: none;    
+}
+*/
+#itemPage{
+display:none;
+margin-top: 15vh;
+flex-wrap: wrap;
+width: 70vw;
+position: relative;
+margin-bottom: auto;
+float: left;
+align-self: center;
+flex-direction: row-reverse;
+
+}
+
+#wrapper{  
+display :flex;
+flex-direction: row;
+flex-wrap: wrap;    
+width: 70vw;
+background-color: rgb(254,248,248) ;
+margin: 0 auto;
+justify-content: center;
+}
+
+.imagesMain{
+margin-top: 1vw;
+margin-left: 2vw;
+margin-right: 2vw;
+width: 16vw;
+}
+
+.shoppingCartPicture{
+margin-top: 1vw;
+margin-left: 2vw;
+margin-right: 2vw;
+width: 16vw;
+
+
+}
+#shoppingCartPage{
+display: none;
+
+}
+
+.image-post{
+width: 20vw;
+height: 20vw;
+margin-top: 4vh;
+margin-left: 1vw;
+margin-right: 1vw;
+background:white
+
+
+
+}
+.imagePostMain{
+    width: 20vw;
+    height: 20vw;
+    margin-top: 3vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    background:white
+    
+    
+    
+    }
+.ShoppingPost{
+width: 12vw;
+height: 12vw;
+margin-top: 4vh;
+margin-left: 1vw;
+}
+
+#post2 {
+    margin-top: 50;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 5%;
+
+    width: 30vw;
+    height: 50vw;
+
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color:white;
+    
+}
+.galleryMain{
+display: flex;
+width: 70vw;
+
+flex-wrap: wrap;
+
+justify-content: left;
+margin-top: -3vw;
+margin-left: 0;
+margin-right: auto;
+
+}
+#post1Item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 1px;
+    width: 30vw;
+    height: 50vw;
+    vertical-align: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color:white;
+
+
+}
+/*
+itemPageView {
+}
+*/
+.textInteractables{
+
+
+margin-top: 1vw;    
+}
+.imgText{
+margin-left: 2vw;
+margin-right: 2vw;
+margin-bottom: vw;
+width: 16vw;}
+
+.WrapperInteractables{
+margin-top: 1vw;
+display: table-column;
+align-items: left;
+margin-left: 10vw;
+margin-right: auto;
+}
+
+#thumbnail1 {
+    background-image: url(pexels-deena-1689577.jpg);
+    border: solid black 2px;
+
+}
+
+#thumbnail2 {
+  background-image: url(pexels-pew-nguyen-279128.jpg);
+ 
+} 
+
+#thumbnail3 {
+   
+    background-image: url(pexels-pixabay-237228.jpg); 
+  
+}
+
+.thumbnailgallery {
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 8vw ;
+  height: 8vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  
+}
+
+h1 {
+    margin-top: 3vw;
+    margin-bottom: 2vw;
+    margin: 5%;
+
+   }
+
+   .price p{
+     font-weight: bold;
+     margin-left: 2vw;
+     font-size: 22px;
+     margin-right: auto;
+   }
+
+
+ .amountbuttons {
+   margin-left: 2vw;
+   }
+
+   .buttons {
+     margin-right: -2px;
+     margin-left: -2px;
+     padding: 15px 24px;
+     border-radius: 1px;
+     border-style: solid;
+     border-color: rgb(112, 112, 112);
+   }
+
+   #post1 > div:nth-child(3) > p:nth-child(1) {
+    margin: 5%;
+    }
+
+    #post2 > div:nth-child(3) > p:nth-child(1) {
+        margin: 5%;
+            }
+
+
+
+  .shoppingcartbutton {
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-radius: 5px;
+    margin-left: 2vw;
+    padding: 15px 32px;
+    
+    
+  }
+
+  .info {
+    margin-top: 5vw;
+  }
