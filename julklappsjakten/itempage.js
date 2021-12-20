@@ -64,7 +64,9 @@ if (i === ij) {
     
 
   }
+  console.log(document.getElementById("imageid").price);
   document.getElementById("imageid").src = imgArray[i].src;   
+ 
 }
   
 

@@ -162,22 +162,9 @@ margin-right: 2vw;
     flex-direction: row-reverse;
         
   }
-/*
-#Julkransar{
-display: none;
-}
-#julklader{
-display: none;    
-}
-#Juldekorationer{
-display: none;
-}
-#Julgranspynt{
-display: none;    
-}
-*/
+
 #itemPage{
-display:none;
+
 margin-top: 15vh;
 flex-wrap: wrap;
 width: 70vw;
@@ -204,6 +191,7 @@ margin-top: 1vw;
 margin-left: 2vw;
 margin-right: 2vw;
 width: 16vw;
+height: 16vw;
 }
 
 .shoppingCartPicture{
@@ -214,29 +202,31 @@ width: 16vw;
 
 
 }
-#shoppingCartPage{
-display: none;
-
-}
 
 .image-post{
 width: 20vw;
-height: 20vw;
+height: 30vw;
 margin-top: 4vh;
 margin-left: 1vw;
 margin-right: 1vw;
-background:white
+background:red
 
 
 
 }
+
+
+  .imgText{
+  position: sticky;  
+  }
 .imagePostMain{
     width: 20vw;
-    height: 20vw;
-    margin-top: 3vw;
+    height: 26vw;
+    margin-top: 7vw;
     margin-right: 1vw;
     margin-left: 1vw;
-    background:white
+    background:white;
+    margin-bottom: 1vw;
     
     
     
