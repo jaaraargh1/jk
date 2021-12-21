@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="style.css" rel="stylesheet">
         <script src="./widget-accordion/interactions.js"></script>
-        <script src="itempage.js"></script>
+       <!-- <script src="itempage.js"></script> -->
         <script src="navigation.js"></script>
         <title>Your Website</title>
 </head>
@@ -25,7 +25,7 @@
 
             </div>
             <div id="shoppingCartIcon" class="categoryType" id="tab-6" role="tab" aria-selected="false" aria-controls="shoppingCartPage"></div>
-
+             <div id="shoppingCartValue">0</div>
         </div>
         
         <div id="header">
@@ -99,20 +99,40 @@
         <div class="posts">
 
             <div class="ShoppingPost">
-                <div class="post-image">
-                    <img src="images/swimmer.jpeg" class="shoppingCartPicture">
+                <div class="wrapperItemInfo">
+                    <img src="images/swimmer.jpeg" class="shoppingCartPicture" id="imageIdCart">
+                   <div class="wrapTabortIntText">
+                    <div class="integersText" id="nameID">Name</div>
+                    <div class="taBort">Ta Bort</div>
                 </div>
-                
+                    <div id="intWrapper">
+                    <div class="integersText" id="prisID"> 1000</div>
+                    <div class="integersText" id="kvantitetID">999</div>
+                    <div class="integersText" id="delSummaID">10000</div>
+                   </div>
+
+
+                </div>
+            
             </div>
-            <div class="WrapperInteractables">
-                <div class="textInteractables">Item name</div>
-                <div class="textInteractables">Ta bort</div>
-                <div class="textInteractables">Item Info</div>
-            </div>
+            <div class="lineAfterItem"></div>
+            
             
         </div>
-        
-            </div>
+        <div id="wrapTotal">
+        <div id="total">Totalt</div>
+      <div id="totalSum">123</div>
+    
+    </div>
+
+    <div id="buttonWrapper">
+        <button id="continueShopping" class="shoppingButton">Fortsätt Handla</button>
+      <button id="pay" class="shoppingButton">Betala nu</button>
+    
+    </div>
+
+
+    </div>
             <div id ="itemPage" role="tabpanel" aria-labeledby="tab-8" hidden="">
 
                 <div id="post1Item" class="image-post">
@@ -145,10 +165,10 @@
                     </div>
                     <div class="amountbuttons">
                         <button id="minus" class="buttons">-</button>
-                        <button id="amount" class="buttons">1</button>
+                        <div id="amount" class="buttons">1</div>
                         <button id="plus" class="buttons">+</button>
 
-                        <button class="shoppingcartbutton">Lägg i kundvagn</button>
+                        <button class="shoppingcartbutton" id="shoppingCartButtonID">Lägg i kundvagn</button>
 
                     </div>
 

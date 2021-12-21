@@ -5,6 +5,10 @@ document.getElementById("right").addEventListener("mouseover", mouseOverR);
 document.getElementById("right").addEventListener("mouseout", mouseOutR);
 document.getElementById("left").addEventListener("click", clickR);
 document.getElementById("right").addEventListener("click", clickL);
+document.getElementById("plus").addEventListener("click", increase);
+document.getElementById("minus").addEventListener("click", decrease);
+document.getElementById("shoppingCartButtonID").addEventListener("click", addToCart);
+
 });
 
 let imgArray = new Array();
@@ -17,7 +21,28 @@ imgArray [1].src = "pexels-pew-nguyen-279128.jpg"
 imgArray [2] = new Image();
 imgArray [2].src = "pexels-pixabay-237228.jpg"
 
+function increase() {
+  let val = parseInt(document.getElementById("amount").innerHTML);
+  let tmp = val += 1;
+  document.getElementById("amount").innerHTML = tmp;
+}
+function decrease() {
+  if (parseInt(document.getElementById("amount").innerHTML) != 0){
+  let val = parseInt(document.getElementById("amount").innerHTML);
+  let tmp = val -= 1;
+  document.getElementById("amount").innerHTML = tmp;
+}
+}
 
+function addToCart(){
+  document.getElementById("shoppingCartValue").style.display = "block";
+
+let valueToAdd = parseInt(document.getElementById("amount").innerHTML);
+let oldCartValue = parseInt(document.getElementById("shoppingCartValue").innerHTML);
+document.getElementById("shoppingCartValue").innerHTML = valueToAdd + oldCartValue;
+
+
+}
 
 function mouseOverL() {
   document.getElementById("left").style.borderRightColor = "#FF0000";
