@@ -1,3 +1,10 @@
+
+/*
+Eventuellt fixa så att items "stackar" i shopping carten
+Grå opacity när den ej finns i lager på lägg till i varukorg!
+CSS shopping Cart sidan
+
+*/
 document.addEventListener("DOMContentLoaded", (event) => {
 let i = 7;  
 document.querySelectorAll(".categoryType").forEach(widget => {
@@ -29,7 +36,14 @@ document.getElementById("plus").addEventListener("click", increase);
 document.getElementById("minus").addEventListener("click", decrease);
 document.getElementById("shoppingCartButtonID").addEventListener("click", addToCart);
 document.getElementById("continueShopping").addEventListener("click", continueShopping);
-
+document.getElementById("tab-1").addEventListener("mouseover", hooverHeader);
+document.getElementById("tab-2").addEventListener("mouseover", hooverHeader);
+document.getElementById("tab-3").addEventListener("mouseover", hooverHeader);
+document.getElementById("tab-4").addEventListener("mouseover", hooverHeader);
+document.getElementById("tab-1").addEventListener("mouseout", hooverHeaderLeave);
+document.getElementById("tab-2").addEventListener("mouseout", hooverHeaderLeave);
+document.getElementById("tab-3").addEventListener("mouseout", hooverHeaderLeave);
+document.getElementById("tab-4").addEventListener("mouseout", hooverHeaderLeave);
 });
 
 /*
@@ -60,22 +74,25 @@ const items = [
 let LastObjectVisisted;
 let imgArray = new Array();
 imgArray [0] = new Image();
-imgArray [0].src = "pexels-deena-1689577.jpg"
- 
 imgArray [1] = new Image();
-imgArray [1].src = "pexels-pew-nguyen-279128.jpg"
-
 imgArray [2] = new Image();
-imgArray [2].src = "pexels-pixabay-237228.jpg"
 
+function hooverHeader(event){
+event.target.style.borderBottom = "solid 2px #000000"; 
 
+}
+
+function hooverHeaderLeave(event){
+    event.target.style.borderBottom = "none"; 
+    
+    }
 function updateCartWithNewItem (valueToAdd){
     let element = LastObjectVisisted;
-    document.getElementById("nameID").innerHTML = items.find(x => x.id === element).name;
-    document.getElementById("imageIdCart").src= items.find(x => x.id === element).img;
-    document.getElementById("kvantitetID").innerHTML = valueToAdd;
-    document.getElementById("prisID").innerHTML = items.find(x => x.id === element).price;
-    document.getElementById("delSummaID").innerHTML= (parseInt(document.getElementById("prisID").innerHTML) * parseInt(document.getElementById("kvantitetID").innerHTML));
+  //  document.getElementById("nameID").innerHTML = items.find(x => x.id === element).name;
+  //  document.getElementById("imageIdCart").src= items.find(x => x.id === element).img;
+  //  document.getElementById("kvantitetID").innerHTML = valueToAdd;
+  //  document.getElementById("prisID").innerHTML = items.find(x => x.id === element).price;
+  //  document.getElementById("delSummaID").innerHTML= (parseInt(document.getElementById("prisID").innerHTML) * parseInt(document.getElementById("kvantitetID").innerHTML));
 
 }
 
@@ -93,6 +110,7 @@ function decrease() {
 }
 
 function addToCart(){
+let element = LastObjectVisisted;
     document.getElementById("shoppingCartValue").style.display = "block";
 
 let valueToAdd = parseInt(document.getElementById("amount").innerHTML);
@@ -100,7 +118,90 @@ let oldCartValue = parseInt(document.getElementById("shoppingCartValue").innerHT
 document.getElementById("shoppingCartValue").innerHTML = valueToAdd + oldCartValue;
 updateCartWithNewItem(valueToAdd);
 
+/*    */
+let newDiv = document.createElement('div');
+newDiv.setAttribute("class", "wrapperItemInfo");
+let newImg = document.createElement('img');
+newImg.src = items.find(x => x.id === element).img;
+newImg.setAttribute("class", "shoppingCartPicture");
+newDiv.appendChild(newImg);
+document.getElementById("posts").appendChild(newDiv);
+let newWrapperText = document.createElement('div');
+newWrapperText.setAttribute("class", "wrapTabortIntText");
+newDiv.appendChild(newWrapperText);
+
+let integersText = document.createElement('div');
+integersText.setAttribute("class","integersText");
+integersText.innerHTML = items.find(x => x.id === element).name;
+newWrapperText.appendChild(integersText);
+let taBort = document.createElement('div');
+taBort.setAttribute("class", "taBort");
+taBort.innerHTML = "Ta bort";
+taBort.addEventListener("click", removeItem);
+newWrapperText.appendChild(taBort);
+
+/*                       */
+let itemInfoWrapper = document.createElement('div');
+itemInfoWrapper.setAttribute("class","intWrapper");
+newDiv.appendChild(itemInfoWrapper);
+
+let pris = document.createElement('div');
+pris.setAttribute("class", "integersText");
+pris.innerHTML = items.find(x => x.id === element).price;
+itemInfoWrapper.appendChild(pris);
+    //document.getElementById("kvantitetID").innerHTML = valueToAdd;
+
+
+let kvantitet = document.createElement('div');
+kvantitet.setAttribute("class", "integersText kvant");
+kvantitet.innerHTML =  valueToAdd;
+itemInfoWrapper.appendChild(kvantitet);
+
+
+let delsumma = document.createElement('div');
+delsumma.setAttribute("class", "integersText partSum");
+delsumma.innerHTML = (parseInt(document.getElementById("tmpPris").innerHTML) * parseInt(document.getElementById("amount").innerHTML));
+itemInfoWrapper.appendChild(delsumma);
+
+let line = document.createElement('div');
+line.setAttribute("class","lineAfterItem");
+document.getElementById("posts").appendChild(line);
+
+/* totalSum */
+/*partSum */
+let totalValue = 0;
+let tmpPartSum = document.getElementsByClassName("partSum");
+for (var i = 0; i < tmpPartSum.length; i++) {
+    totalValue += parseInt(document.getElementsByClassName("partSum")[i].innerHTML);
 }
+document.getElementById("totalSum").innerHTML = totalValue;
+}
+
+function removeItem(event){
+let tmp = event.target.closest(".wrapperItemInfo");
+let parent = event.target.parentNode;
+console.log(parent);
+let tmp2 = parent.nextElementSibling.querySelector('.kvant').innerHTML;
+let tmp3 = document.getElementById("shoppingCartValue").innerHTML;
+document.getElementById("shoppingCartValue").innerHTML = parseInt(tmp3) -parseInt(tmp2);
+tmp.nextElementSibling.remove();
+
+//kvant
+tmp.remove();
+
+if(document.getElementById("shoppingCartValue").innerHTML ==="0"){
+document.getElementById("shoppingCartValue").style.display = "none";
+}
+
+
+let totalValue = 0;
+let tmpPartSum = document.getElementsByClassName("partSum");
+for (var i = 0; i < tmpPartSum.length; i++) {
+    totalValue += Math.abs(parseInt(document.getElementsByClassName("partSum")[i].innerHTML));
+}
+document.getElementById("totalSum").innerHTML = totalValue;
+}
+
 
 function mouseOverL() {
   document.getElementById("left").style.borderRightColor = "#FF0000";
